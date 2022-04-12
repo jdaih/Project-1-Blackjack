@@ -5,9 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css"/>
-    <script src='./script.js' defer></script>
     <title>Blackjack</title>
 </head>
 <body>
+    <div class="game">
+        <div class="game">
+               <h1>Blackjack</h1>
+
+       <div class="game-area">
+           <!-- Buttons -->
+              <div class="buttons">
+               <input type="button" id="btnStart" class="btn" value="start" onclick="startblackjack()">
+               <input type="button" class="btn" value="hit me" onclick="hitMe()">
+               <input type="button" class="btn" value="stay" onclick="stay()">
+               </div>
+
+                   <div class="status" id="status"></div>
+       
+               <div id="deck" class="deck">
+                   <div id="deckcount">52</div>
+               </div>
+       
+               <div id="players" class="players">
+               </div>
+       
+               <div class="clear"></div>
+       </div>
+   </div>
+    <div class="dealerWins">
+        <h1>Dealer Wins</h1>
+        <div id="dealerWins"></div>
+    </div>
+    <div class="playerWins">
+        <h1>Player Wins</h1>
+    <div id="playerWins"></div>
+    </div>
+    <script src='./script.js' defer></script>
 </body>
 </html>
