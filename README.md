@@ -2,6 +2,9 @@ Blackjack is a classic casino card game in which players acquire cards while get
 
 ☐ Screenshot(s):
 
+<img width="1071" alt="Screen Shot 2022-04-12 at 11 54 02 PM" src="https://user-images.githubusercontent.com/101396061/163104372-b30ffa95-aa99-4882-abc4-241038fc11b9.png">
+
+
 ☐ Technologies Used: 
 - HTML 
 - CSS
