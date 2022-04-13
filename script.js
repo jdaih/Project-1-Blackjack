@@ -135,7 +135,7 @@ function stay() {
 
     document.getElementById('dealer-sum').innerHTML = dealerSum;
     document.getElementById('player-sum').innerHTML = playerSum;
-    document.getElementById('results').innerHTML = message;
+    document.getElementById('outcome').innerHTML = message;
 }
 
 document.getElementById("hit").addEventListener("click", hit);
