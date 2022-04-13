@@ -8,12 +8,6 @@ let deck;
 let canHit = true;
 
 
-// Calling functions
-buildDeck();
-shuffleDeck();
-startGame();
-
-
 // Deck Creation
 function buildDeck() {
     let suits = ['H', 'D', 'C', 'S'];
@@ -22,7 +16,6 @@ function buildDeck() {
 
     for (let i = 0; i < suits.length; i++) {
         for (let j = 0; j < ranks.length; j++){
-            // console.log(ranks[x] + suits[i])
             deck.push(ranks[j] + '-' + suits[i])
         }
     }
@@ -63,21 +56,19 @@ function startGame() {
         cardImg.src = './cards/' + card + '.png';
         document.getElementById('player-cards').append(cardImg);
     }
-    document.getElementById("hit").addEventListener("click", hit);
-    document.getElementById("stay").addEventListener("click", stay);
 }
 
 function getValue(card) {
     let data = card.split('-');
     let value = data[0];
 
-    if (isNaN(value)) {    // giving face cards a value
+    if (isNaN(value)) {                         // Giving face cards a value 
         if (value == 'A') {
             return 11;
         }
         return 10;
     }
-    return parseInt(value)
+    return parseInt(value)                      // Converts deck strings into numbers
 }
 
 
@@ -86,7 +77,6 @@ function hit() {
     if (!canHit) {
         return;
     }
-
     let card = deck.pop();
     playerSum += getValue(card);
     playerAces += checkAce(card);
@@ -97,20 +87,62 @@ function hit() {
     if (reduceAce(playerSum, playerAces) > 21) {             // Stops hitting if sum with Ace over 21
         canHit = false;
     }
+    document.getElementById('dealer-sum').innerText = dealerSum;
+    document.getElementById('player-sum').innerText = playerSum;
 }
 
 // Ace functions
-function reduceAce(playerSum, playerAces) {
-    while (playerSum > 21 && playerAces > 0) {
-        playerSum -= 10;
-        playerAceCount -= 1;
-    }
-    return playerSum;
-}
-
 function checkAce(card) {
     if (card[0] == 'A') {
         return 1;
     }
     return 0;
 }
+
+function reduceAce(playerSum, playerAces) {
+    while (playerSum > 21 && playerAces > 0) {
+        playerSum -= 10;
+        playerAces -= 1;
+    }
+    return playerSum;
+}
+
+
+// Stay function
+function stay() {
+    dealerSum = reduceAce(dealerSum, dealerAces);
+    playerSum = reduceAce(playerSum, playerAces);
+
+    canHit = false;
+    document.getElementById("hidden").src = "./cards/" + hidden + ".png";
+
+    let message = '';
+    if (playerSum > 21) {
+        message = 'You Lose!';
+    }
+    else if (dealerSum > 21) {
+        message = 'You win!';
+    }
+    else if (playerSum == dealerSum) {
+        message = 'Tie!';
+    }
+    else if (playerSum > dealerSum) {
+        message = "You Win!";
+    }
+    else if (playerSum < dealerSum) {
+        message = "You Lose!";
+    }
+
+    document.getElementById('dealer-sum').innerHTML = dealerSum;
+    document.getElementById('player-sum').innerHTML = playerSum;
+    document.getElementById('results').innerHTML = message;
+}
+
+document.getElementById("hit").addEventListener("click", hit);
+document.getElementById("stay").addEventListener("click", stay);
+    
+
+// Invoking functions
+buildDeck();
+shuffleDeck();
+startGame();
