@@ -12,12 +12,13 @@ A classic casino card game in which players acquire cards while getting as close
 
 
 ☐ Getting Started:
-    Link: https://jdaih.github.io/Project-1-Blackjack/
 
 1. Cards are automatically dealt upon loading the game
 2. Player can click either "Hit" or "Stay" to progress game
 3. Clicking "Stay" ends the current game and determines the result
 4. Reload the game by refreshing the page
+
+Link: https://jdaih.github.io/Project-1-Blackjack/
 
 
 ☐ Next Steps: 
