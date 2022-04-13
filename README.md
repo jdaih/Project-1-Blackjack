@@ -14,7 +14,7 @@ Blackjack: A classic casino card game in which players acquire cards while getti
 3. Clicking "Stay" ends the current game and determines the result
 4. Reload the game by refreshing the page
 
-Link: https://jdaih.github.io/Project-1-Blackjack/
+  Link: https://jdaih.github.io/Project-1-Blackjack/
 
 ☐ Next Steps: 
 - Ability to place bets
