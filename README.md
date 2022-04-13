@@ -1,22 +1,28 @@
-Blackjack
-
-<Your game's title>: A description of your game. Background info of the game is a nice touch.
-
-☐ Screenshot(s): Images of your actual game.
-
-☐ Technologies Used: List of the technologies used, e.g., JavaScript, HTML, CSS...
-
-☐ Getting Started: In this section include the link to your deployed game and any instructions you deem important.
-
-☐ Next Steps: Planned future enhancements (icebox items).
+<Blackjack>: 
+A classic casino card game in which players acquire cards while getting as close as possible to 21 without going over. Players can place bets before the game begins and compete against a dealer.
 
 
-MVP:
-- deal cards to player + dealer
-- winner chosen after respective turns end
-- hit + stand buttons
-- message indicating ^
+☐ Screenshot(s):
 
 
-Add later:
-- ability to place bets
+☐ Technologies Used: 
+- HTML 
+- CSS
+- JavaScript
+
+
+☐ Getting Started:
+    Link: https://jdaih.github.io/Project-1-Blackjack/
+
+1. Cards are automatically dealt upon loading the game
+2. Player can click either "Hit" or "Stay" to progress game
+3. Clicking "Stay" ends the current game and determines the result
+4. Reload the game by refreshing the page
+
+
+☐ Next Steps: 
+- Ability to place bets
+- Another button that resets the game state
+- Add more rules i.e. insurance, doubling down
+- Blackjack alert message for dealer + player
+- Use 8-bit card images
