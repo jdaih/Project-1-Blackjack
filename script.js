@@ -87,7 +87,6 @@ function hit() {
     if (reduceAce(playerSum, playerAces) > 21) {             // Stops hitting if sum with Ace over 21
         canHit = false;
     }
-    document.getElementById('dealer-sum').innerText = dealerSum;
     document.getElementById('player-sum').innerText = playerSum;
 }
 
@@ -121,7 +120,7 @@ function stay() {
         message = 'You Lose!';
     }
     else if (dealerSum > 21) {
-        message = 'You win!';
+        message = 'Dealer busts!';
     }
     else if (playerSum == dealerSum) {
         message = 'Tie!';
@@ -140,7 +139,9 @@ function stay() {
 
 document.getElementById("hit").addEventListener("click", hit);
 document.getElementById("stay").addEventListener("click", stay);
-    
+// document.getElementById("deal").addEventListener("click", function newGame() {
+//     deck = [];
+// });
 
 // Invoking functions
 buildDeck();
